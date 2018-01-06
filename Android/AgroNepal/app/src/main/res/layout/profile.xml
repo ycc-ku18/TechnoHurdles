@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20px"
+    android:background="@drawable/background"
+    tools:context="com.technohurdles.agronepal.ProfileView">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="32px"
+            android:textStyle="bold"
+            android:text="Farner Name"/>
+        <TextView
+            android:id="@+id/profile_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_name"
+            android:textSize="24px"
+            android:text="Address"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="10px"
+        android:layout_marginBottom="10px"
+        android:background="@drawable/shape_line_breaker"/>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10px">
+
+            <TextView
+                android:id="@+id/profile_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10px"
+                android:text="About : "
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="28px"/>
+            <TextView
+                android:id="@+id/profile_descrption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20px"
+                android:textSize="24px"
+                android:background="#ffffff"
+                android:text="Description Here
+                \n.....
+                \n.....
+                \n.....
+                \n.....
+                \n.....
+                \n....."/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>agroNepal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+     <nav class="navbar navbar-inverse" style="background-color:green; border:none; border-radius: 50px 20px; font-weight: bolder; ">
+	<div class="container">
+		<div class="row">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>                        
+      			</button>
+				<a class="navbar-brand" href="index.html" style="color: Black;">agroNepal</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="" id="home"><a href="index.html">गृहपृष्ठ</a></li>
+					<li class=""><a href="profile.html">प्रोफाइल</a></li>
+                    <li class="active"><a href="adminIndex.html">लग इन</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</nav>
+      
+        <div class="container" >
+            <div class="row">
+                <div class="col-sm-offset-2 col-sm-8 col-sm-offset-2">
+                    <form class="form-horizontal">
+                        <h1 style="font-weight: bolder;">बिउबिजन <small>विवरण</small></h1>
+                        
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">क्षेत्र</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="idRegion" name="region">
+                                    <option value="0">क्षेत्र चयन गर्नुहोस्</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">नाम</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="text" name="txtName" id="idName" placeholder="Name">
+                            </div>
+                        </div>
+                            
+                       <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">विवरण</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="idDes" name="txtdes" placeholder="Description Here...." rows="4" cols="50"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">प्रक्रिया</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="txtProcedure" id="idProcedure" placeholder="procedure here...." rows="4" cols="50"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">आवश्यकता</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="txtRequirement" id="idRequirement" placeholder="Requirement here...." rows="4" cols="50"></textarea>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <div class="col-sm-offset-6 col-sm-2 col-sm-offset-4">
+                                <button type="submit" class="btn btn-success" id="btnSub">बुझाउनुहोस्</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      <script type="text/javascript">
+          $(document).ready(function(){
+            $.ajax({
+              type:"GET",
+              url:'http://localhost:8080/region/getAllRegions',
+              dataType:"JSON",
+              success:function(response){
+                $.each(response,function(k,v){
+                    console.log(v.regId);
+                    var op='<option value="'+v.regId+'">'+v.regName+'</option>';
+                    $("#idRegion").append(op);
+                });
+                // console.log(response);
+              },error:function(response){
+                        console.log(response);
+              }
+          });
+          });
+
+
+          $("#btnSub").click(function(){
+            var name = $("#idName").val();
+            var description =   $("#idDes").val();
+            var procedure = $("#idProcedure").val();
+            var requirement = $("#idRequirement").val();
+            var region = $("#idRegion").val();
+            var data=  {
+                "prodName": name,
+                "prodDecription": description,
+                "prodRequirement":requirement,
+                "prodProcedure":procedure,
+                "prodRegId": {"regId":region}};
+            $.ajax({
+              type:"POST",
+              url:"http://localhost:8080/product/save",
+              dataType:"JSON",
+              contentType: "application/json",
+              data:JSON.stringify(data),
+              success:function(response){
+                console.log("Inserted");
+              },
+              error:function(response){
+                console(response.statusText);
+              }
+
+            })
+          });
+      </script>
+        </script>
+    </body>
+</html>

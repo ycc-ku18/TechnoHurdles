@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20px"
+    android:background="@drawable/background"
+    tools:context="com.technohurdles.agronepal.FarmerView">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20px"
+        android:textSize="32px"
+        android:text="किसान (Farmer)"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="10px"
+        android:layout_marginBottom="10px"
+        android:background="@drawable/shape_line_breaker"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/user1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:padding="10px"
+                android:layout_marginBottom="20px">
+
+                <TextView
+                    android:id="@+id/user1_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10px"
+                    android:text="Shreejal Shakya"
+                    android:textStyle="bold"
+                    android:textSize="28px"/>
+
+                <TextView
+                    android:id="@+id/user1_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/user1_name"
+                    android:layout_marginTop="10px"
+                    android:layout_marginLeft="10px"
+                    android:textSize="24px"
+                    android:text="bla bla bla bla ......"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/user2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:padding="10px"
+                android:layout_marginBottom="20px">
+
+                <TextView
+                    android:id="@+id/user2_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10px"
+                    android:text="Arun Aryal"
+                    android:textStyle="bold"
+                    android:textSize="28px"/>
+
+                <TextView
+                    android:id="@+id/user2_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/user2_name"
+                    android:layout_marginTop="10px"
+                    android:layout_marginLeft="10px"
+                    android:textSize="24px"
+                    android:text="bla bla bla bla ......"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/user3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:padding="10px"
+                android:layout_marginBottom="20px">
+
+                <TextView
+                    android:id="@+id/user3_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10px"
+                    android:text="Sudip Bolakhe"
+                    android:textStyle="bold"
+                    android:textSize="28px"/>
+
+                <TextView
+                    android:id="@+id/user3_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/user3_name"
+                    android:layout_marginTop="10px"
+                    android:layout_marginLeft="10px"
+                    android:textSize="24px"
+                    android:text="bla bla bla bla ......"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/user4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:padding="10px"
+                android:layout_marginBottom="20px">
+
+                <TextView
+                    android:id="@+id/user4_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10px"
+                    android:text="Suraj Kumar Yadav"
+                    android:textStyle="bold"
+                    android:textSize="28px"/>
+
+                <TextView
+                    android:id="@+id/user4_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/user4_name"
+                    android:layout_marginTop="10px"
+                    android:layout_marginLeft="10px"
+                    android:textSize="24px"
+                    android:text="bla bla bla bla ......"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/user5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:padding="10px"
+                android:layout_marginBottom="20px">
+
+                <TextView
+                    android:id="@+id/user5_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10px"
+                    android:text="Akash Rout"
+                    android:textStyle="bold"
+                    android:textSize="28px"/>
+
+                <TextView
+                    android:id="@+id/user5_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/user5_name"
+                    android:layout_marginTop="10px"
+                    android:layout_marginLeft="10px"
+                    android:textSize="24px"
+                    android:text="bla bla bla bla ......"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
